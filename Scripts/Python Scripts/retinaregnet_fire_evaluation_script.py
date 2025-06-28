@@ -767,7 +767,7 @@ def compute_plot_FIRE_AUC(landmark_errors,clss='All'):
     plt.title("Success Rate vs. Threshold")
     plt.legend()
     plt.grid(True)
-    plt.show()
+    # plt.show()
     # Compute AUC
     auc = np.sum(success_rates)/ 2500 # normalize to 0-1
     if clss =='All':
@@ -814,7 +814,7 @@ def plot_landmark_errors(landmark_errors,rpth,chrs='All',disable_outliers=False)
     plt.legend(fontsize=12)
     plt.tight_layout()
     plt.savefig(os.path.join(rpth,'Landmark_Error_Plot.png'))
-    plt.show();
+    # plt.show();
 
 def image_point_correspondences(images,img_size,landmarks1,landmarks2,rpth,num,snum,disp_size=256,disp_clip=0.0):
     """
@@ -880,7 +880,7 @@ def image_point_correspondences(images,img_size,landmarks1,landmarks2,rpth,num,s
         ax2.add_patch(circ2_2)
     plt.figtext(0.5, 0.115, "Note: {0} point correspondences were identified by the model for stage-{1}".format(len(landmarks1), snum), ha='center', fontweight='bold', fontsize=8.5)
     plt.savefig(os.path.join(rpth,'Stage'+str(snum)+'Point_Correspondences'+str(num)+'.png'))
-    plt.show();
+    # plt.show();
 
 def original_image_point_correspondences(images,orig_moving_image_pth,img_size, landmarks1, landmarks2, landmarks3, rpth, num, disp_size=256,disp_clip=0.0):
     """
@@ -962,7 +962,7 @@ def original_image_point_correspondences(images,orig_moving_image_pth,img_size, 
         ax3.add_patch(circ3_2)
 
     plt.savefig(os.path.join(rpth, 'Final_Registration_Results_for_case' + str(num) + '.png'))
-    plt.show();
+    # plt.show();
 
 def coordinates_rescaling_high_scale(pnts,H,W,img_shape):
     """
@@ -1501,7 +1501,7 @@ def compute_third_order_polynomial_matrix_and_plot(images, img_size, landmarks1,
     axs[2].set_title('Deformed Image')
     axs[2].axis('off')
 
-    plt.show();
+    # plt.show();
 
     # saving intermediary results for better visualization
     imgs.append(os.path.join(rpth, 'Deformed_Image_' + str(num) + '_.png'))
@@ -1594,7 +1594,7 @@ def compute_affine_matrix_and_plot(images,img_size,landmarks1, landmarks2,rpth,n
     axs[2].set_title('Deformed Image')
     axs[2].axis('off')
 
-    plt.show();
+    # plt.show();
 
     # saving intermediary results for better visualization
     imgs.append(os.path.join(rpth, 'Deformed_Image_' + str(num) + '_.png'))
@@ -1692,7 +1692,7 @@ def compute_quadratic_matrix_and_plot(images,img_size,landmarks1, landmarks2,rpt
     axs[2].set_title('Deformed Image')
     axs[2].axis('off')
 
-    plt.show();
+    # plt.show();
 
     # saving intermediary results for better visualization
     imgs.append(os.path.join(rpth, 'Deformed_Image_' + str(num) + '_.png'))
@@ -1781,7 +1781,7 @@ def compute_homography_matrix_and_plot(images, img_size, landmarks1, landmarks2,
     axs[2].set_title('Deformed Image')
     axs[2].axis('off')
 
-    plt.show();
+    # plt.show()
 
     # saving intermediary results for better visualization
     imgs.append(os.path.join(rpth, 'Deformed_Image_' + str(num) + '_.png'))
